@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
   <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
   <meta
     name="description"
-    content="Compte à rebours officiel de l'Excursion Fatih Boutique - 2ème édition"
+    content="Excursion Fatih Boutique - 2ème édition - Canon Beach - 07 Novembre 2026"
   >
+
+  <meta name="theme-color" content="#061a13">
 
   <title>Excursion Fatih Boutique | 07 Novembre 2026</title>
 
-
   <style>
 
-    /* =====================================================
+    /* =========================================================
        RESET
-    ===================================================== */
+    ========================================================= */
 
     * {
       margin: 0;
@@ -29,11 +29,9 @@
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
-
 
     body {
       font-family:
@@ -42,102 +40,87 @@
         sans-serif;
 
       min-height: 100vh;
-
-      color: white;
-
+      color: #ffffff;
       overflow-x: hidden;
 
-      background:
-        #061a13;
+      background: #061a13;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
 
-    /* =====================================================
-       BACKGROUND
-    ===================================================== */
+    /* =========================================================
+       PAGE BACKGROUND
+    ========================================================= */
 
     .page {
       position: relative;
-
       min-height: 100vh;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 40px 20px;
+      padding: 35px 18px 100px;
 
       overflow: hidden;
 
       background:
         linear-gradient(
-          rgba(2, 30, 20, 0.72),
-          rgba(2, 20, 14, 0.88)
+          rgba(2, 30, 20, 0.70),
+          rgba(2, 20, 14, 0.91)
         ),
         url("images/excursion.jpg.jpeg");
 
       background-size: cover;
       background-position: center;
-
       background-attachment: fixed;
     }
-
-
-    /* =====================================================
-       DARK OVERLAY
-    ===================================================== */
 
     .page::before {
       content: "";
 
-      position: absolute;
-
+      position: fixed;
       inset: 0;
+
+      pointer-events: none;
 
       background:
         radial-gradient(
-          circle at 50% 20%,
-          rgba(255, 193, 7, 0.15),
-          transparent 35%
+          circle at 50% 10%,
+          rgba(255, 193, 7, 0.16),
+          transparent 32%
         );
-
-      pointer-events: none;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        PARTICLES
-    ===================================================== */
+    ========================================================= */
 
     .particles {
-      position: absolute;
-
+      position: fixed;
       inset: 0;
 
       overflow: hidden;
-
       pointer-events: none;
-    }
 
+      z-index: 0;
+    }
 
     .particle {
       position: absolute;
 
-      width: 5px;
-      height: 5px;
-
-      background: #ffd21f;
+      width: 4px;
+      height: 4px;
 
       border-radius: 50%;
 
-      opacity: 0.7;
+      opacity: 0.65;
 
       animation:
         floatParticle
         linear
         infinite;
     }
-
 
     @keyframes floatParticle {
 
@@ -166,79 +149,96 @@
 
         opacity: 0;
       }
-
     }
 
 
-    /* =====================================================
-       MAIN CARD
-    ===================================================== */
+    /* =========================================================
+       MAIN CONTAINER
+    ========================================================= */
 
     .container {
-
       position: relative;
-
       z-index: 2;
 
       width: 100%;
+      max-width: 1080px;
 
-      max-width: 1000px;
+      margin: 0 auto;
 
-      text-align: center;
+      padding: 38px 32px 55px;
 
-      padding: 35px 25px 40px;
-
-      border-radius: 30px;
+      border-radius: 32px;
 
       background:
-        rgba(3, 35, 24, 0.72);
+        rgba(3, 35, 24, 0.78);
 
       border:
         1px solid rgba(255, 215, 0, 0.25);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
 
       box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.55);
+        0 30px 90px rgba(0, 0, 0, 0.55);
 
       animation:
         cardAppear
-        1s
+        0.9s
         ease-out;
     }
-
 
     @keyframes cardAppear {
 
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(25px);
       }
 
       to {
         opacity: 1;
         transform: translateY(0);
       }
-
     }
 
 
-    /* =====================================================
-       LOGO
-    ===================================================== */
+    /* =========================================================
+       BRAND / LOGO
+    ========================================================= */
 
-    .logo {
+    .brand {
+      text-align: center;
 
-      width: 190px;
+      margin-bottom: 20px;
+    }
 
-      max-width: 60%;
+    .logo-wrap {
+      display: inline-flex;
 
-      margin-bottom: 15px;
+      align-items: center;
+      justify-content: center;
 
-      filter:
-        drop-shadow(
-          0 8px 15px rgba(0, 0, 0, 0.35)
+      width: 250px;
+      height: 160px;
+
+      margin: 0 auto 15px;
+
+      padding: 14px;
+
+      border-radius: 28px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255, 210, 31, 0.14),
+          rgba(255, 255, 255, 0.025) 65%,
+          transparent 75%
         );
+
+      border:
+        1px solid rgba(255, 210, 31, 0.20);
+
+      box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.30),
+        inset 0 0 30px rgba(255, 210, 31, 0.04);
 
       animation:
         logoFloat
@@ -247,6 +247,18 @@
         infinite;
     }
 
+    .logo {
+      width: 225px;
+      max-width: 100%;
+      max-height: 135px;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 10px 20px rgba(0, 0, 0, 0.40)
+        );
+    }
 
     @keyframes logoFloat {
 
@@ -256,23 +268,24 @@
       }
 
       50% {
-        transform: translateY(-8px);
+        transform: translateY(-7px);
       }
-
     }
 
 
-    /* =====================================================
-       HEADINGS
-    ===================================================== */
+    /* =========================================================
+       EDITION BADGE
+    ========================================================= */
 
     .edition {
+      display: inline-flex;
 
-      display: inline-block;
+      align-items: center;
+      justify-content: center;
 
-      padding: 7px 16px;
+      padding: 8px 18px;
 
-      margin-bottom: 12px;
+      margin-bottom: 15px;
 
       border-radius: 50px;
 
@@ -285,22 +298,27 @@
 
       color: #10251b;
 
-      font-weight: 800;
-
-      font-size: 0.8rem;
+      font-weight: 900;
+      font-size: 0.78rem;
 
       letter-spacing: 2px;
 
       text-transform: uppercase;
+
+      box-shadow:
+        0 8px 25px rgba(255, 166, 0, 0.18);
     }
 
 
-    h1 {
+    /* =========================================================
+       MAIN TITLE
+    ========================================================= */
 
+    h1 {
       font-size:
         clamp(3rem, 9vw, 6.5rem);
 
-      line-height: 0.95;
+      line-height: 0.9;
 
       font-weight: 900;
 
@@ -308,7 +326,7 @@
 
       letter-spacing: -3px;
 
-      margin-bottom: 15px;
+      margin-bottom: 18px;
 
       background:
         linear-gradient(
@@ -333,7 +351,6 @@
         infinite;
     }
 
-
     @keyframes gradientText {
 
       0% {
@@ -347,52 +364,138 @@
       100% {
         background-position: 0%;
       }
-
     }
 
-
     .subtitle {
-
       font-size:
-        clamp(1rem, 2.5vw, 1.3rem);
+        clamp(1rem, 2.5vw, 1.25rem);
 
       color: #e8f3ed;
 
-      margin-bottom: 10px;
+      line-height: 1.5;
+
+      margin-bottom: 8px;
+    }
+
+    .location {
+      color: #ffd21f;
+
+      font-weight: 800;
+
+      font-size: 1rem;
+
+      margin-bottom: 28px;
     }
 
 
-    .location {
+    /* =========================================================
+       EVENT INFO
+    ========================================================= */
+
+    .event-info {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 12px;
+
+      max-width: 850px;
+
+      margin: 25px auto 30px;
+    }
+
+    .info-card {
+      padding: 17px 12px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255, 255, 255, 0.055);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(255, 210, 31, 0.45);
+    }
+
+    .info-icon {
+      display: block;
+
+      font-size: 1.35rem;
+
+      margin-bottom: 6px;
+    }
+
+    .info-label {
+      display: block;
+
+      color: #9db3a8;
+
+      font-size: 0.68rem;
+
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      display: block;
+
+      color: #ffffff;
+
+      font-weight: 800;
+
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================================================
+       COUNTDOWN
+    ========================================================= */
+
+    .section-title {
+      margin-top: 38px;
+      margin-bottom: 16px;
 
       color: #ffd21f;
 
-      font-weight: 700;
+      font-size: 0.78rem;
 
-      margin-bottom: 30px;
+      font-weight: 900;
+
+      letter-spacing: 2.5px;
+
+      text-transform: uppercase;
     }
 
-
-    /* =====================================================
-       COUNTDOWN
-    ===================================================== */
-
     .countdown {
-
       display: grid;
 
       grid-template-columns:
         repeat(4, 1fr);
 
-      gap: 15px;
-
-      margin: 30px auto;
+      gap: 14px;
 
       max-width: 850px;
+
+      margin: 0 auto 28px;
     }
 
-
     .time-box {
-
       position: relative;
 
       padding: 22px 10px;
@@ -403,7 +506,7 @@
         linear-gradient(
           145deg,
           rgba(255, 255, 255, 0.13),
-          rgba(255, 255, 255, 0.04)
+          rgba(255, 255, 255, 0.035)
         );
 
       border:
@@ -420,18 +523,14 @@
         border-color 0.3s ease;
     }
 
-
     .time-box:hover {
-
-      transform: translateY(-6px);
+      transform: translateY(-5px);
 
       border-color:
-        rgba(255, 210, 31, 0.6);
+        rgba(255, 210, 31, 0.55);
     }
 
-
     .time-box::before {
-
       content: "";
 
       position: absolute;
@@ -443,14 +542,12 @@
       right: -40px;
 
       background:
-        rgba(255, 210, 31, 0.12);
+        rgba(255, 210, 31, 0.10);
 
       border-radius: 50%;
     }
 
-
     .number {
-
       display: block;
 
       font-size:
@@ -466,66 +563,57 @@
         0 0 20px rgba(255, 210, 31, 0.25);
     }
 
-
     .label {
-
       display: block;
 
-      margin-top: 10px;
+      margin-top: 9px;
 
       color: #ffd21f;
 
-      font-size: 0.8rem;
+      font-size: 0.75rem;
 
-      font-weight: 700;
+      font-weight: 800;
 
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
 
       text-transform: uppercase;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        PROGRESS
-    ===================================================== */
+    ========================================================= */
 
     .progress-section {
-
       max-width: 800px;
 
-      margin: 35px auto 20px;
+      margin: 0 auto 25px;
 
       text-align: left;
     }
 
-
     .progress-header {
-
       display: flex;
 
       justify-content: space-between;
 
-      gap: 20px;
+      gap: 15px;
 
       margin-bottom: 9px;
 
-      font-size: 0.85rem;
+      font-size: 0.82rem;
 
       color: #dce9e2;
     }
 
-
     #progressPercent {
-
       color: #ffd21f;
 
-      font-weight: 800;
+      font-weight: 900;
     }
 
-
     .progress-bar {
-
-      height: 13px;
+      height: 12px;
 
       width: 100%;
 
@@ -537,12 +625,10 @@
         rgba(255, 255, 255, 0.12);
 
       border:
-        1px solid rgba(255, 255, 255, 0.1);
+        1px solid rgba(255, 255, 255, 0.10);
     }
 
-
     .progress-fill {
-
       width: 0%;
 
       height: 100%;
@@ -565,21 +651,384 @@
     }
 
 
-    /* =====================================================
-       DATE
-    ===================================================== */
+    /* =========================================================
+       TICKETS
+    ========================================================= */
+
+    .tickets-section {
+      margin-top: 48px;
+
+      padding-top: 35px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tickets-heading {
+      text-align: center;
+
+      margin-bottom: 10px;
+    }
+
+    .tickets-heading h2 {
+      font-size:
+        clamp(2rem, 6vw, 3rem);
+
+      line-height: 1.05;
+
+      margin-bottom: 9px;
+
+      font-weight: 900;
+    }
+
+    .tickets-heading h2 span {
+      color: #ffd21f;
+    }
+
+    .tickets-heading p {
+      color: #b8c9c1;
+
+      font-size: 0.95rem;
+
+      line-height: 1.5;
+    }
+
+    .tickets {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      max-width: 900px;
+
+      margin: 25px auto 0;
+    }
+
+    .ticket {
+      position: relative;
+
+      display: flex;
+
+      flex-direction: column;
+
+      padding: 28px 25px 25px;
+
+      border-radius: 26px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.10),
+          rgba(255, 255, 255, 0.035)
+        );
+
+      border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.25);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .ticket:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(255, 210, 31, 0.55);
+
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .ticket::after {
+      content: "";
+
+      position: absolute;
+
+      width: 170px;
+      height: 170px;
+
+      right: -90px;
+      top: -90px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 210, 31, 0.07);
+
+      pointer-events: none;
+    }
+
+    .ticket.vip {
+      border-color:
+        rgba(255, 210, 31, 0.38);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 210, 31, 0.11),
+          rgba(255, 255, 255, 0.035)
+        );
+    }
+
+    .vip-badge {
+      position: absolute;
+
+      top: 15px;
+      right: 15px;
+
+      padding: 6px 10px;
+
+      border-radius: 50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffd21f,
+          #ff8c00
+        );
+
+      color: #10251b;
+
+      font-size: 0.65rem;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+    }
+
+    .ticket-name {
+      color: #ffffff;
+
+      font-size: 0.85rem;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .ticket-price {
+      color: #ffd21f;
+
+      font-size:
+        clamp(2.7rem, 7vw, 4rem);
+
+      font-weight: 900;
+
+      line-height: 1;
+
+      margin-bottom: 8px;
+    }
+
+    .ticket-description {
+      color: #b9cbc2;
+
+      font-size: 0.85rem;
+
+      line-height: 1.5;
+
+      margin-bottom: 20px;
+    }
+
+    .ticket-list {
+      list-style: none;
+
+      margin-bottom: 23px;
+
+      text-align: left;
+    }
+
+    .ticket-list li {
+      position: relative;
+
+      padding-left: 25px;
+
+      margin-bottom: 11px;
+
+      color: #eef5f1;
+
+      font-size: 0.88rem;
+
+      line-height: 1.4;
+    }
+
+    .ticket-list li::before {
+      content: "✓";
+
+      position: absolute;
+
+      left: 0;
+
+      color: #ffd21f;
+
+      font-weight: 900;
+    }
+
+    .reserve-btn {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+
+      min-height: 52px;
+
+      margin-top: auto;
+
+      padding: 13px 18px;
+
+      border-radius: 14px;
+
+      text-decoration: none;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffd21f,
+          #ff9d00
+        );
+
+      color: #10251b;
+
+      font-size: 0.88rem;
+
+      font-weight: 900;
+
+      letter-spacing: 0.5px;
+
+      box-shadow:
+        0 10px 25px rgba(255, 157, 0, 0.18);
+
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+    }
+
+    .reserve-btn:hover {
+      transform: translateY(-3px);
+
+      filter: brightness(1.08);
+    }
+
+    .reserve-btn:active {
+      transform: scale(0.98);
+    }
+
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
+    .experience {
+      margin-top: 50px;
+
+      padding-top: 35px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .experience-heading {
+      text-align: center;
+
+      margin-bottom: 22px;
+    }
+
+    .experience-heading h2 {
+      font-size:
+        clamp(1.8rem, 5vw, 2.7rem);
+
+      margin-bottom: 8px;
+
+      font-weight: 900;
+    }
+
+    .experience-heading h2 span {
+      color: #ffd21f;
+    }
+
+    .experience-heading p {
+      color: #b8c9c1;
+
+      font-size: 0.9rem;
+    }
+
+    .experience-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 12px;
+    }
+
+    .experience-card {
+      padding: 22px 13px;
+
+      text-align: center;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255, 255, 255, 0.045);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .experience-icon {
+      display: block;
+
+      font-size: 1.8rem;
+
+      margin-bottom: 9px;
+    }
+
+    .experience-card strong {
+      display: block;
+
+      font-size: 0.85rem;
+
+      margin-bottom: 5px;
+    }
+
+    .experience-card p {
+      color: #aebfb7;
+
+      font-size: 0.72rem;
+
+      line-height: 1.45;
+    }
+
+
+    /* =========================================================
+       EVENT DATE / MESSAGE
+    ========================================================= */
 
     .event-date {
-
       display: inline-flex;
 
       align-items: center;
+      justify-content: center;
 
       gap: 10px;
 
-      margin-top: 25px;
+      margin-top: 28px;
 
-      padding: 12px 20px;
+      padding: 13px 20px;
 
       border-radius: 50px;
 
@@ -588,44 +1037,38 @@
 
       color: #ffffff;
 
-      font-weight: 600;
+      font-weight: 700;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
     }
 
-
     .event-date strong {
-
       color: #ffd21f;
     }
 
-
-    /* =====================================================
-       FOOTER MESSAGE
-    ===================================================== */
-
     .message {
+      max-width: 700px;
 
-      margin-top: 25px;
+      margin: 22px auto 0;
 
       color: #e6f1eb;
 
       font-size: 1rem;
 
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-
     .message strong {
-
       color: #ffd21f;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        ACTION BUTTONS
-    ===================================================== */
+    ========================================================= */
 
     .actions {
-
       display: flex;
 
       justify-content: center;
@@ -633,40 +1076,12 @@
 
       flex-wrap: wrap;
 
-      gap: 14px;
+      gap: 12px;
 
-      margin-top: 30px;
-
-      animation:
-        buttonsAppear
-        1s
-        ease
-        .4s
-        both;
+      margin-top: 28px;
     }
-
-
-    @keyframes buttonsAppear {
-
-      from {
-        opacity: 0;
-
-        transform:
-          translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-
-        transform:
-          translateY(0);
-      }
-
-    }
-
 
     .action-btn {
-
       display: inline-flex;
 
       align-items: center;
@@ -674,13 +1089,15 @@
 
       min-width: 190px;
 
-      padding: 14px 22px;
+      min-height: 50px;
+
+      padding: 13px 20px;
 
       border-radius: 50px;
 
-      font-size: 0.9rem;
+      font-size: 0.85rem;
 
-      font-weight: 800;
+      font-weight: 900;
 
       text-decoration: none;
 
@@ -693,37 +1110,25 @@
         0 8px 20px rgba(0, 0, 0, 0.18);
 
       transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        filter 0.3s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
     }
 
-
     .action-btn:hover {
-
-      transform:
-        translateY(-5px);
+      transform: translateY(-4px);
 
       box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.35);
 
-      filter:
-        brightness(1.1);
+      filter: brightness(1.08);
     }
-
 
     .action-btn:active {
-
-      transform:
-        translateY(-2px)
-        scale(0.98);
+      transform: scale(0.98);
     }
 
-
-    /* Gallery */
-
     .gallery-btn {
-
       background:
         linear-gradient(
           135deg,
@@ -734,20 +1139,11 @@
       color: #10251b;
     }
 
-
-    /* WhatsApp */
-
     .whatsapp-btn {
-
-      background:
-        #25d366;
+      background: #25d366;
     }
 
-
-    /* Instagram */
-
     .instagram-btn {
-
       background:
         linear-gradient(
           135deg,
@@ -757,31 +1153,20 @@
         );
     }
 
-
-    /* Facebook */
-
     .facebook-btn {
-
-      background:
-        #1877f2;
+      background: #1877f2;
     }
 
-
-    /* =====================================================
-       SOCIAL TITLE
-    ===================================================== */
-
     .social-title {
-
-      margin-top: 34px;
+      margin-top: 42px;
 
       margin-bottom: 12px;
 
       color: #ffd21f;
 
-      font-size: 0.8rem;
+      font-size: 0.75rem;
 
-      font-weight: 800;
+      font-weight: 900;
 
       letter-spacing: 2px;
 
@@ -789,13 +1174,90 @@
     }
 
 
-    /* =====================================================
-       END SCREEN
-    ===================================================== */
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+    .final-cta {
+      margin-top: 48px;
+
+      padding: 30px 20px;
+
+      text-align: center;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 210, 31, 0.10),
+          rgba(0, 168, 107, 0.08)
+        );
+
+      border:
+        1px solid rgba(255, 210, 31, 0.18);
+    }
+
+    .final-cta h2 {
+      font-size:
+        clamp(1.6rem, 5vw, 2.4rem);
+
+      margin-bottom: 8px;
+    }
+
+    .final-cta p {
+      color: #b9cbc2;
+
+      font-size: 0.9rem;
+
+      margin-bottom: 18px;
+    }
+
+    .final-cta .reserve-main {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding: 14px 25px;
+
+      border-radius: 50px;
+
+      text-decoration: none;
+
+      color: #10251b;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffd21f,
+          #ff8c00
+        );
+
+      font-weight: 900;
+
+      box-shadow:
+        0 12px 30px rgba(255, 157, 0, 0.20);
+
+      transition:
+        transform 0.25s ease;
+    }
+
+    .final-cta .reserve-main:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       FINISHED SCREEN
+    ========================================================= */
 
     .finished {
-
       display: none;
+
+      margin-top: 35px;
 
       animation:
         celebration
@@ -805,7 +1267,6 @@
         alternate;
     }
 
-
     @keyframes celebration {
 
       from {
@@ -813,14 +1274,11 @@
       }
 
       to {
-        transform: scale(1.04);
+        transform: scale(1.03);
       }
-
     }
 
-
     .finished h2 {
-
       font-size:
         clamp(2rem, 7vw, 4rem);
 
@@ -829,9 +1287,7 @@
       margin-bottom: 15px;
     }
 
-
     .finished p {
-
       font-size: 1.15rem;
 
       color: white;
@@ -840,182 +1296,522 @@
     }
 
 
-    /* =====================================================
-       MOBILE
-    ===================================================== */
+    /* =========================================================
+       MOBILE STICKY RESERVATION
+    ========================================================= */
 
-    @media (max-width: 700px) {
+    .mobile-reserve {
+      display: none;
+
+      position: fixed;
+
+      left: 12px;
+      right: 12px;
+
+      bottom:
+        calc(12px + env(safe-area-inset-bottom));
+
+      z-index: 100;
+
+      min-height: 55px;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 17px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffd21f,
+          #ff8c00
+        );
+
+      color: #10251b;
+
+      text-decoration: none;
+
+      font-size: 0.9rem;
+
+      font-weight: 900;
+
+      box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.40);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.25);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 760px) {
 
       .page {
-
-        padding: 20px 12px;
+        padding:
+          14px
+          10px
+          95px;
 
         background-attachment: scroll;
       }
 
-
       .container {
+        padding:
+          25px
+          13px
+          35px;
 
-        padding: 28px 15px 30px;
-
-        border-radius: 22px;
+        border-radius: 25px;
       }
 
+      .logo-wrap {
+        width: 225px;
+        height: 145px;
+
+        margin-bottom: 13px;
+      }
 
       .logo {
-
-        width: 150px;
+        width: 205px;
+        max-height: 125px;
       }
 
+      .edition {
+        font-size: 0.68rem;
+
+        padding:
+          7px
+          14px;
+
+        letter-spacing: 1.5px;
+      }
 
       h1 {
+        font-size:
+          clamp(3rem, 17vw, 5rem);
 
-        letter-spacing: -1px;
+        letter-spacing: -2px;
+
+        margin-bottom: 13px;
       }
 
+      .subtitle {
+        font-size: 0.93rem;
+      }
+
+      .location {
+        font-size: 0.9rem;
+
+        margin-bottom: 20px;
+      }
+
+      .event-info {
+        grid-template-columns:
+          repeat(3, 1fr);
+
+        gap: 7px;
+
+        margin:
+          20px
+          auto
+          25px;
+      }
+
+      .info-card {
+        padding:
+          13px
+          5px;
+
+        border-radius: 14px;
+      }
+
+      .info-icon {
+        font-size: 1.1rem;
+      }
+
+      .info-label {
+        font-size: 0.55rem;
+
+        letter-spacing: 0.7px;
+      }
+
+      .info-value {
+        font-size: 0.72rem;
+      }
+
+      .section-title {
+        margin-top: 28px;
+      }
 
       .countdown {
-
         grid-template-columns:
           repeat(2, 1fr);
 
-        gap: 10px;
-      }
+        gap: 9px;
 
+        margin-bottom: 22px;
+      }
 
       .time-box {
+        padding:
+          17px
+          7px;
 
-        padding: 20px 8px;
+        border-radius: 17px;
       }
-
-
-      .event-date {
-
-        font-size: 0.85rem;
-      }
-
-
-      .actions {
-
-        flex-direction: column;
-
-        width: 100%;
-      }
-
-
-      .action-btn {
-
-        width: 100%;
-
-        max-width: 320px;
-      }
-
-    }
-
-
-    @media (max-width: 380px) {
 
       .number {
-
-        font-size: 2.2rem;
+        font-size:
+          clamp(2.3rem, 15vw, 3.5rem);
       }
 
-
       .label {
+        margin-top: 7px;
 
-        font-size: 0.65rem;
+        font-size: 0.62rem;
 
         letter-spacing: 1px;
       }
 
+      .progress-section {
+        margin-bottom: 18px;
+      }
+
+      .progress-header {
+        font-size: 0.68rem;
+      }
+
+      .event-date {
+        max-width: 100%;
+
+        font-size: 0.78rem;
+
+        padding:
+          11px
+          14px;
+      }
+
+      .message {
+        font-size: 0.88rem;
+
+        line-height: 1.65;
+      }
+
+      .tickets-section {
+        margin-top: 35px;
+
+        padding-top: 28px;
+      }
+
+      .tickets {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 20px;
+      }
+
+      .ticket {
+        padding:
+          24px
+          20px
+          20px;
+
+        border-radius: 22px;
+      }
+
+      .ticket-price {
+        font-size: 3.3rem;
+      }
+
+      .ticket-list li {
+        font-size: 0.84rem;
+
+        margin-bottom: 9px;
+      }
+
+      .reserve-btn {
+        min-height: 54px;
+
+        font-size: 0.84rem;
+
+        border-radius: 14px;
+      }
+
+      .experience {
+        margin-top: 38px;
+
+        padding-top: 28px;
+      }
+
+      .experience-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 9px;
+      }
+
+      .experience-card {
+        padding:
+          18px
+          9px;
+
+        border-radius: 17px;
+      }
+
+      .experience-icon {
+        font-size: 1.55rem;
+      }
+
+      .experience-card strong {
+        font-size: 0.78rem;
+      }
+
+      .experience-card p {
+        font-size: 0.66rem;
+      }
+
+      .actions {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+      }
+
+      .action-btn {
+        width: 100%;
+
+        max-width: 380px;
+
+        min-height: 52px;
+      }
+
+      .social-title {
+        margin-top: 32px;
+      }
+
+      .final-cta {
+        margin-top: 35px;
+
+        padding:
+          25px
+          16px;
+      }
+
+      .mobile-reserve {
+        display: flex;
+      }
+    }
+
+
+    /* =========================================================
+       SMALL PHONES
+    ========================================================= */
+
+    @media (max-width: 390px) {
+
+      .page {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+
+      .container {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .logo-wrap {
+        width: 205px;
+        height: 132px;
+      }
+
+      .logo {
+        width: 188px;
+      }
+
+      h1 {
+        font-size: 2.9rem;
+      }
+
+      .info-label {
+        font-size: 0.50rem;
+      }
+
+      .info-value {
+        font-size: 0.66rem;
+      }
+
+      .number {
+        font-size: 2.25rem;
+      }
+
+      .label {
+        font-size: 0.56rem;
+      }
+
+      .ticket {
+        padding-left: 17px;
+        padding-right: 17px;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration:
+          0.01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.01ms !important;
+      }
     }
 
   </style>
-
 </head>
 
 
 <body>
 
-
   <main class="page">
 
-
-    <!-- =====================================================
-         ANIMATED PARTICLES
-    ====================================================== -->
-
+    <!-- PARTICLES -->
     <div
       class="particles"
       id="particles"
     ></div>
 
 
-    <!-- =====================================================
-         MAIN CARD
-    ====================================================== -->
-
+    <!-- MAIN CONTENT -->
     <section class="container">
 
 
-      <!-- =================================================
-           LOGO
-      ================================================== -->
+      <!-- =====================================================
+           BRAND
+      ====================================================== -->
 
-      <img
-        src="images/logo.png"
-        alt="Fatih Boutique"
-        class="logo"
-      >
+      <div class="brand">
 
+        <div class="logo-wrap">
 
-      <!-- =================================================
-           EDITION
-      ================================================== -->
+          <img
+            src="images/logo.png"
+            alt="Fatih Boutique"
+            class="logo"
+          >
 
-      <div class="edition">
+        </div>
 
-        2ème édition
+        <div class="edition">
+          2ème édition
+        </div>
 
       </div>
 
 
-      <!-- =================================================
+      <!-- =====================================================
            TITLE
-      ================================================== -->
+      ====================================================== -->
 
       <h1>
-
         Excursion
-
       </h1>
 
-
       <p class="subtitle">
-
         Venez passer des moments inoubliables
-
       </p>
-
 
       <p class="location">
-
         📍 Destination : Canon Beach
-
       </p>
 
 
-      <!-- =================================================
+      <!-- =====================================================
+           EVENT INFORMATION
+      ====================================================== -->
+
+      <div class="event-info">
+
+        <div class="info-card">
+
+          <span class="info-icon">
+            📅
+          </span>
+
+          <span class="info-label">
+            Date
+          </span>
+
+          <span class="info-value">
+            07 Novembre
+          </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <span class="info-icon">
+            ⏰
+          </span>
+
+          <span class="info-label">
+            Départ
+          </span>
+
+          <span class="info-value">
+            08:00
+          </span>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <span class="info-icon">
+            📍
+          </span>
+
+          <span class="info-label">
+            Destination
+          </span>
+
+          <span class="info-value">
+            Canon Beach
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
            COUNTDOWN
-      ================================================== -->
+      ====================================================== -->
+
+      <div class="section-title">
+        ⏳ Le compte à rebours est lancé
+      </div>
 
       <div
         class="countdown"
         id="countdown"
       >
-
-
-        <!-- DAYS -->
 
         <div class="time-box">
 
@@ -1027,15 +1823,11 @@
           </span>
 
           <span class="label">
-
             Jours
-
           </span>
 
         </div>
 
-
-        <!-- HOURS -->
 
         <div class="time-box">
 
@@ -1047,15 +1839,11 @@
           </span>
 
           <span class="label">
-
             Heures
-
           </span>
 
         </div>
 
-
-        <!-- MINUTES -->
 
         <div class="time-box">
 
@@ -1067,15 +1855,11 @@
           </span>
 
           <span class="label">
-
             Minutes
-
           </span>
 
         </div>
 
-
-        <!-- SECONDS -->
 
         <div class="time-box">
 
@@ -1087,41 +1871,31 @@
           </span>
 
           <span class="label">
-
             Secondes
-
           </span>
 
         </div>
-
 
       </div>
 
 
-      <!-- =================================================
+      <!-- =====================================================
            PROGRESS
-      ================================================== -->
+      ====================================================== -->
 
       <div class="progress-section">
-
 
         <div class="progress-header">
 
           <span>
-
-            ⏳ Temps restant avant l'aventure
-
+            Temps restant avant l'aventure
           </span>
 
-
           <span id="progressPercent">
-
             100%
-
           </span>
 
         </div>
-
 
         <div class="progress-bar">
 
@@ -1132,34 +1906,257 @@
 
         </div>
 
-
       </div>
 
 
-      <!-- =================================================
+      <!-- =====================================================
+           TICKETS
+      ====================================================== -->
+
+      <section
+        class="tickets-section"
+        id="tickets"
+      >
+
+        <div class="tickets-heading">
+
+          <h2>
+            🎟️ Nos <span>formules</span>
+          </h2>
+
+          <p>
+            Choisissez l'expérience qui vous correspond.
+          </p>
+
+        </div>
+
+
+        <div class="tickets">
+
+
+          <!-- ESSENTIAL -->
+
+          <article class="ticket">
+
+            <div class="ticket-name">
+              Essential
+            </div>
+
+            <div class="ticket-price">
+              25 $
+            </div>
+
+            <p class="ticket-description">
+              L’essentiel pour savourer pleinement la journée.
+            </p>
+
+            <ul class="ticket-list">
+
+              <li>
+                Plat complet + Salade
+              </li>
+
+              <li>
+                Accompagnement
+              </li>
+
+              <li>
+                Boisson offerte
+              </li>
+
+              <li>
+                Shooting photo
+              </li>
+
+            </ul>
+
+            <a
+              class="reserve-btn"
+              href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Essential%20%C3%A0%2025%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 Réserver — 25 $
+            </a>
+
+          </article>
+
+
+          <!-- GOURMAND VIP -->
+
+          <article class="ticket vip">
+
+            <div class="vip-badge">
+              V.I.P
+            </div>
+
+            <div class="ticket-name">
+              Gourmand V.I.P
+            </div>
+
+            <div class="ticket-price">
+              30 $
+            </div>
+
+            <p class="ticket-description">
+              L’expérience complète et festive.
+            </p>
+
+            <ul class="ticket-list">
+
+              <li>
+                Plat complet + Salade
+              </li>
+
+              <li>
+                Accompagnement
+              </li>
+
+              <li>
+                Special Miami Liboke + Accompagnement
+              </li>
+
+              <li>
+                Boisson offerte
+              </li>
+
+              <li>
+                Shooting photo
+              </li>
+
+            </ul>
+
+            <a
+              class="reserve-btn"
+              href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Gourmand%20V.I.P%20%C3%A0%2030%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 Réserver — 30 $
+            </a>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           EXPERIENCE
+      ====================================================== -->
+
+      <section class="experience">
+
+        <div class="experience-heading">
+
+          <h2>
+            Une journée à <span>vivre</span>
+          </h2>
+
+          <p>
+            Bien plus qu'une excursion, une expérience à partager.
+          </p>
+
+        </div>
+
+
+        <div class="experience-grid">
+
+          <div class="experience-card">
+
+            <span class="experience-icon">
+              🌴
+            </span>
+
+            <strong>
+              Détente
+            </strong>
+
+            <p>
+              Profitez d'une journée loin du quotidien.
+            </p>
+
+          </div>
+
+
+          <div class="experience-card">
+
+            <span class="experience-icon">
+              🎶
+            </span>
+
+            <strong>
+              Ambiance
+            </strong>
+
+            <p>
+              Musique, partage et bonne humeur.
+            </p>
+
+          </div>
+
+
+          <div class="experience-card">
+
+            <span class="experience-icon">
+              📸
+            </span>
+
+            <strong>
+              Souvenirs
+            </strong>
+
+            <p>
+              Immortalisez les meilleurs moments.
+            </p>
+
+          </div>
+
+
+          <div class="experience-card">
+
+            <span class="experience-icon">
+              🍽️
+            </span>
+
+            <strong>
+              Gastronomie
+            </strong>
+
+            <p>
+              Des formules pensées pour la journée.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
            EVENT DATE
-      ================================================== -->
+      ====================================================== -->
 
       <div class="event-date">
 
         📅
 
         <span>
-
           <strong>
             07 Novembre 2026
           </strong>
 
           — 08:00
-
         </span>
 
       </div>
 
 
-      <!-- =================================================
+      <!-- =====================================================
            MESSAGE
-      ================================================== -->
+      ====================================================== -->
 
       <p class="message">
 
@@ -1174,26 +2171,33 @@
       </p>
 
 
-      <!-- =================================================
+      <!-- =====================================================
            MAIN ACTIONS
-      ================================================== -->
+      ====================================================== -->
 
       <div class="actions">
 
+        <!-- TICKETS -->
 
-        <!-- Gallery -->
+        <a
+          href="#tickets"
+          class="action-btn gallery-btn"
+        >
+          🎟️ Voir les billets
+        </a>
+
+
+        <!-- GALLERY -->
 
         <a
           href="gallery.html"
           class="action-btn gallery-btn"
         >
-
-          📸 &nbsp; Voir nos souvenirs
-
+          📸 Voir nos souvenirs
         </a>
 
 
-        <!-- WhatsApp -->
+        <!-- WHATSAPP GROUP -->
 
         <a
           href="https://chat.whatsapp.com/KhP6900A1910Hkmkbttcsa"
@@ -1201,30 +2205,23 @@
           rel="noopener noreferrer"
           class="action-btn whatsapp-btn"
         >
-
-          💬 &nbsp; Rejoindre WhatsApp
-
+          💬 Rejoindre WhatsApp
         </a>
 
-
       </div>
 
 
-      <!-- =================================================
+      <!-- =====================================================
            SOCIAL MEDIA
-      ================================================== -->
+      ====================================================== -->
 
       <div class="social-title">
-
         Suivez-nous
-
       </div>
-
 
       <div class="actions">
 
-
-        <!-- Instagram -->
+        <!-- INSTAGRAM -->
 
         <a
           href="https://www.instagram.com/fatihboutique01?stkn=N2ppaGRxY2l1cjVt"
@@ -1232,13 +2229,11 @@
           rel="noopener noreferrer"
           class="action-btn instagram-btn"
         >
-
           ◎ &nbsp; Instagram
-
         </a>
 
 
-        <!-- Facebook -->
+        <!-- FACEBOOK -->
 
         <a
           href="https://www.facebook.com/share/18WRLsjThe/?mibextid=wwXIfr"
@@ -1246,31 +2241,50 @@
           rel="noopener noreferrer"
           class="action-btn facebook-btn"
         >
-
           f &nbsp; Facebook
-
         </a>
-
 
       </div>
 
 
-      <!-- =================================================
+      <!-- =====================================================
+           FINAL RESERVATION CTA
+      ====================================================== -->
+
+      <section class="final-cta">
+
+        <h2>
+          Votre place vous attend 🎟️
+        </h2>
+
+        <p>
+          Réservez directement votre formule par WhatsApp.
+        </p>
+
+        <a
+          class="reserve-main"
+          href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20avoir%20plus%20d%27informations%20sur%20les%20billets%20de%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💬 Réserver via WhatsApp
+        </a>
+
+      </section>
+
+
+      <!-- =====================================================
            FINISHED SCREEN
-      ================================================== -->
+      ====================================================== -->
 
       <div
         class="finished"
         id="finished"
       >
 
-
         <h2>
-
           🎉 C'est le grand jour !
-
         </h2>
-
 
         <p>
 
@@ -1288,24 +2302,35 @@
 
         </p>
 
-
       </div>
 
 
     </section>
 
-
   </main>
 
 
+  <!-- =========================================================
+       MOBILE STICKY RESERVATION BUTTON
+  ========================================================== -->
+
+  <a
+    href="#tickets"
+    class="mobile-reserve"
+  >
+    🎟️ Voir les billets & réserver
+  </a>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
 
   <script>
 
-
-    /* =====================================================
+    /* =========================================================
        CONFIGURATION
-    ===================================================== */
-
+    ========================================================= */
 
     /*
       Date exacte de l'événement.
@@ -1323,8 +2348,8 @@
 
 
     /*
-      Date de départ utilisée pour calculer
-      la barre de progression.
+      Date de départ utilisée
+      pour la barre de progression.
     */
 
     const startDate =
@@ -1333,65 +2358,38 @@
       ).getTime();
 
 
-
-    /* =====================================================
+    /* =========================================================
        ELEMENTS
-    ===================================================== */
-
+    ========================================================= */
 
     const daysElement =
-      document.getElementById(
-        "days"
-      );
-
+      document.getElementById("days");
 
     const hoursElement =
-      document.getElementById(
-        "hours"
-      );
-
+      document.getElementById("hours");
 
     const minutesElement =
-      document.getElementById(
-        "minutes"
-      );
-
+      document.getElementById("minutes");
 
     const secondsElement =
-      document.getElementById(
-        "seconds"
-      );
-
+      document.getElementById("seconds");
 
     const progressFill =
-      document.getElementById(
-        "progressFill"
-      );
-
+      document.getElementById("progressFill");
 
     const progressPercent =
-      document.getElementById(
-        "progressPercent"
-      );
-
+      document.getElementById("progressPercent");
 
     const countdown =
-      document.getElementById(
-        "countdown"
-      );
-
+      document.getElementById("countdown");
 
     const finished =
-      document.getElementById(
-        "finished"
-      );
+      document.getElementById("finished");
 
 
-
-    /* =====================================================
+    /* =========================================================
        FORMAT NUMBER
-    ===================================================== */
-
+    ========================================================= */
 
     function formatNumber(number) {
 
@@ -1401,84 +2399,65 @@
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        UPDATE COUNTDOWN
-    ===================================================== */
-
+    ========================================================= */
 
     function updateCountdown() {
 
-
       const now =
         new Date().getTime();
-
 
       const remaining =
         eventDate - now;
 
 
-
-      /* -----------------------------------------------
+      /* -------------------------------------------------------
          EVENT TERMINE
-      ------------------------------------------------ */
-
+      ------------------------------------------------------- */
 
       if (remaining <= 0) {
-
 
         daysElement.textContent =
           "00";
 
-
         hoursElement.textContent =
           "00";
-
 
         minutesElement.textContent =
           "00";
 
-
         secondsElement.textContent =
           "00";
 
-
         countdown.style.display =
           "none";
-
 
         document.querySelector(
           ".progress-section"
         ).style.display =
           "none";
 
-
         document.querySelector(
           ".event-date"
         ).style.display =
           "none";
-
 
         document.querySelector(
           ".message"
         ).style.display =
           "none";
 
-
         finished.style.display =
           "block";
 
-
         return;
-
       }
 
 
-
-      /* -----------------------------------------------
+      /* -------------------------------------------------------
          CALCUL CALENDRIER
-      ------------------------------------------------ */
-
+      ------------------------------------------------------- */
 
       const days =
         Math.floor(
@@ -1517,44 +2496,35 @@
         );
 
 
-
-      /* -----------------------------------------------
+      /* -------------------------------------------------------
          AFFICHAGE
-      ------------------------------------------------ */
-
+      ------------------------------------------------------- */
 
       daysElement.textContent =
         formatNumber(days);
 
-
       hoursElement.textContent =
         formatNumber(hours);
 
-
       minutesElement.textContent =
         formatNumber(minutes);
-
 
       secondsElement.textContent =
         formatNumber(seconds);
 
 
-
-      /* -----------------------------------------------
+      /* -------------------------------------------------------
          PROGRESS BAR
 
          100% = début
          0%   = événement
-      ------------------------------------------------ */
-
+      ------------------------------------------------------- */
 
       const totalDuration =
         eventDate - startDate;
 
-
       const elapsed =
         now - startDate;
-
 
       let remainingPercent =
         (
@@ -1579,7 +2549,6 @@
       progressFill.style.width =
         remainingPercent + "%";
 
-
       progressPercent.textContent =
         Math.round(
           remainingPercent
@@ -1588,23 +2557,19 @@
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        PARTICLES
-    ===================================================== */
-
+    ========================================================= */
 
     function createParticles() {
-
 
       const particlesContainer =
         document.getElementById(
           "particles"
         );
 
-
       const numberOfParticles =
-        35;
+        30;
 
 
       for (
@@ -1613,28 +2578,23 @@
         i++
       ) {
 
-
         const particle =
           document.createElement(
             "div"
           );
 
-
         particle.classList.add(
           "particle"
         );
 
-
         particle.style.left =
           Math.random() * 100 + "%";
 
-
         particle.style.animationDuration =
           (
-            6 +
+            7 +
             Math.random() * 10
           ) + "s";
-
 
         particle.style.animationDelay =
           (
@@ -1644,33 +2604,21 @@
 
         const size =
           2 +
-          Math.random() * 5;
+          Math.random() * 4;
 
 
         particle.style.width =
           size + "px";
 
-
         particle.style.height =
           size + "px";
 
 
-        /*
-          Quelques particules jaunes,
-          d'autres vertes/orangées.
-        */
-
-
         const colors = [
-
           "#ffd21f",
-
           "#ff8c00",
-
           "#00a86b",
-
           "#ffffff"
-
         ];
 
 
@@ -1692,14 +2640,11 @@
     }
 
 
-
-    /* =====================================================
+    /* =========================================================
        START
-    ===================================================== */
-
+    ========================================================= */
 
     createParticles();
-
 
     updateCountdown();
 
@@ -1713,9 +2658,7 @@
       1000
     );
 
-
   </script>
-
 
 </body>
 </html>
