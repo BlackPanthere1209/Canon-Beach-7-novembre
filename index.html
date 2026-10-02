@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Countdown</title>
+ 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+ 
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+ 
+.container{
+    max-width:800px;
+}
+ 
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+ 
+.subtitle{
+    font-size:1.2rem;
+    margin-bottom:40px;
+}
+ 
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+ 
+.box{
+    background:rgba(255,255,255,0.15);
+    padding:20px;
+    border-radius:15px;
+    min-width:120px;
+    backdrop-filter:blur(5px);
+}
+ 
+.number{
+    font-size:3rem;
+    font-weight:bold;
+}
+ 
+.label{
+    margin-top:5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+ 
+.footer{
+    margin-top:40px;
+    opacity:0.8;
+}
+</style>
+</head>
+<body>
+ 
+<div class="container">
+    <h1 id="eventTitle">Canon Beach Excursion</h1>
+ 
+    <p class="subtitle">
+        Departure: November 7, 2026 at 08:00 AM
+    </p>
+ 
+    <div class="countdown">
+        <div class="box">
+            <div id="days" class="number">0</div>
+            <div class="label">Days</div>
+        </div>
+ 
+        <div class="box">
+            <div id="hours" class="number">0</div>
+            <div class="label">Hours</div>
+        </div>
+ 
+        <div class="box">
+            <div id="minutes" class="number">0</div>
+            <div class="label">Minutes</div>
+        </div>
+ 
+        <div class="box">
+            <div id="seconds" class="number">0</div>
+            <div class="label">Seconds</div>
+        </div>
+    </div>
+ 
+    <div class="footer">
+        We leave in...
+    </div>
+</div>
+ 
+<script>
+ 
+// CHANGE THESE VALUES FOR FUTURE EVENTS
+const eventDate = new Date("2026-11-07T08:00:00");
+ 
+function updateCountdown() {
+ 
+    const now = new Date();
+    const diff = eventDate - now;
+ 
+    if(diff <= 0){
+        document.querySelector(".container").innerHTML =
+        "<h1>🎉 The event has started!</h1>";
+        return;
+    }
+ 
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((diff % (1000*60)) / 1000);
+ 
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+ 
+setInterval(updateCountdown, 1000);
+updateCountdown();
+ 
+</script>
+ 
+</body>
+</html>
